@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+:root {
+  --light-bg-color: #fbf1e2;
+  --light-bg-color2: #bfdc9c;
+  --light-text-color: #b49366;
+  --dark-bg-color: #003e00;
+  --dark-bg-main: #005600;
+  --dark-bg-body: #181818;
+  --dark-text-color: #fff;
+  --hawaii-yellow: yellow;
+  --hawaii-pink: #fd5baa;
+  --hawaii-blue: #00fdfe;
+  --hawaii-red: red;
+  --hawaii-text-color: #000;
+}
+
+[data-theme="light"] {
+  --text-color: var(--light-text-color);
+  --main-bg-color: var(--light-bg-color);
+  --header-bg-col: var(--light-bg-color);
+  --footer-bg-col: var(--light-bg-color);
+  --body-bg-col: var(--light-bg-color2);
+  --link-col: var(--hawaii-red);
+}
+[data-theme="dark"] {
+  --text-color: var(--dark-text-color);
+  --main-bg-color: var(--dark-bg-main);
+  --header-bg-col: var(--dark-bg-color);
+  --footer-bg-col: var(--dark-bg-color);
+  --body-bg-col: var(--dark-bg-body);
+  --link-col: var(--dark-text-color);
+}
+[data-theme="hawaii"] {
+  --text-color: var(--hawaii-text-color);
+  --main-bg-color: var(--hawaii-blue);
+  --header-bg-col: var(--hawaii-yellow);
+  --footer-bg-col: var(--hawaii-red);
+  --body-bg-col: var(--hawaii-pink);
+  --link-col: var(--hawaii-red);
+}
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-inline: 2rem;
+  background-color: var(--body-bg-col);
+  color: var(--text-color);
+}
+main {
+  background-color: var(--main-bg-color);
+  border: 1px solid black;
+  height: 400px;
+}
+header {
+  display: flex;
+  gap: 2rem;
+  height: 150px;
+  background-color: var(--header-bg-col);
+  border: 1px solid black;
+  border-bottom: none;
+}
+header h1 {
+  font-size: 4rem;
+  -webkit-text-stroke-color: var(--text-color);
+  -webkit-text-stroke: 2px;
+  -webkit-text-fill-color: var(--main-bg-color);
+}
+footer {
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  /* position: absolute; */
+  bottom: 0;
+  background-color: var(--footer-bg-col);
+  border: 1px solid black;
+}
+select {
+  height: max-content;
+  margin-top: 1rem;
+}
+a[href*="mozilla"] {
+  list-style: none;
+  color: var(--link-col);
+}
